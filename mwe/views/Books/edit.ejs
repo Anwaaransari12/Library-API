@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book</title>
+    <link rel="stylesheet" href="/views/Books/edit.css">
+
+    <!-- <style>
+        .button{
+            background-color: rgb(0, 140, 255);
+        color: white;
+        width: 100px;
+        height: 36px;
+        border: none;
+        border-radius: 18px;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.15s, color 0.15s  ;
+        }
+
+        .logo{
+    width: 80px;
+    height: 50px;
+    padding: 10px 10%;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    top: 0;
+    left: 0;
+}
+      -->
+    <!-- </style> -->
+
+        
+            
+        
+
+</head>
+
+<body style="font-family: Arial; padding-left: 43%;">
+    <nav id="navbar" class="logo">
+           
+           <ul >
+              <li><a href="/books">List Books</a></li>
+              <li><a href="/books/new">Add Book</a></li>
+            </ul>
+              
+      </nav>
+    <h1>Update a Book</h1>
+    <form action="/books/<%= EditBook._id%>?_method=PUT" method="POST">
+        <section>
+            <label for="title">Book Title:</label>
+            <input type="text" name="title" placeholder="Book Name" value="<%= EditBook.title %>">
+        </section>
+        <br>
+        <section>
+            <label for="author">Author:</label>
+        <input type="text" name="author" placeholder="Author name" value="<%= EditBook.author %>">
+        </section>
+        <br>
+        <section>
+            <label for="genre">Select Genre:</label>
+            <select name="genre" id="">
+                <option value="Adventure">Adventure</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Novel">Novel</option>
+                <option value="Action">Action</option>
+                <option value="Self-help">Self-help</option>
+                <option value="Non-fiction">Non-fiction</option>
+            </select>
+        </section>
+        <br>
+        <label for="description">Description:</label>
+        <br>
+        <section>
+
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        </section>
+        <br>
+        <button class="button">Submit</button>
+    </form>
+    <br>
+    <a href="/books/<%= EditBook._id %>">Cancel</a>
+</body>
+
+</html>

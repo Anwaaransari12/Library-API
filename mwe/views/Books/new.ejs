@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Book</title>
+    <style>
+        .button{
+            background-color: rgb(0, 140, 255);
+        color: white;
+        width: 100px;
+        height: 36px;
+        border: none;
+        border-radius: 18px;
+        font-weight: bold;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.15s, color 0.15s  ;
+        }
+     
+    </style>
+</head>
+
+<body style="font-family: Arial;">
+    <h1>Add a Book</h1>
+    <form action="/books" method="POST">
+        <section>
+            <label for="title">Book Title: </label>
+            <input type="text" name="title" placeholder="Book Name">
+        </section>
+        <br>
+        <section>
+            <label for="author">Author: </label>
+            <input type="text" name="author" placeholder="Author name">
+        </section>
+        <br>
+        <section>
+            <label for="genre">Select Genre: </label>
+            <select name="genre" id="">
+                <option value="Adventure">Adventure</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Novel">Novel</option>
+                <option value="Action">Action</option>
+                <option value="Self-help">Self-help</option>
+                <option value="Non-fiction">Non-fiction</option>
+            </select>
+        </section>
+        <br>
+        <label for="description">Description: </label>
+        <br>
+        <section>
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        </section>
+        <br>
+        <button class="button">Submit</button>
+    </form>
+</body>
+
+</html>
